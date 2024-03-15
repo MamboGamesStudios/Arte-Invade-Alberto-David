@@ -30,33 +30,7 @@ public class InteractionHandlerScript : MonoBehaviour,
 
         if (eventData.MixedRealityInputAction.Description == "Select")
         {
-            Debug.Log("Funciona");
-            if (gameObject.tag == "Menu")
-            {
-                SceneManager.LoadScene("Main");
-            }
-            else if (gameObject.tag == "Sky")
-            {
-                Debug.Log("Sky");
-                SceneManager.LoadScene("Skybox");
-            }
-            else if(gameObject.tag == "Timelapse")
-            {
-                SceneManager.LoadScene("Video_timelapse");
-            }
-            else if(gameObject.tag == "Credits")
-            {
-                SceneManager.LoadScene("Credits");
-            }
-            else if (gameObject.tag == "Video") {
-                Debug.Log("Video");
-                SceneManager.LoadScene("Video_canteras");
-            }
-            else if (gameObject.tag == "Matterport") {
-                Debug.Log("Matterport");
-                Application.OpenURL("https://my.matterport.com/show/?m=KWP67Z6gwTb");
-                Application.Quit();
-            }
+            gameObject.GetComponent<SimpleCollectibleScript>().Collect();
         }
     }
 
